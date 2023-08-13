@@ -1,11 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
+:root {
+	/* LIGHT MODE */
+	--background-LM: white;
+	--main-text-mode-LM: #3a3939;
+	--input-bg-LM: white;
+	--footer-bg-LM: #eaeaeabf;
+	--button-bg-LM: #eaeaea73;
+	--menu-bg-LM: #c6c6c6;
+	--button-border-LM: 1px solid #bebebe;
+	--footer-text-mode-LM: #868585; 
+	--button-box-shadow-LM: 0px 1px 2px #d3d3d39f;
+	--input-shadow-LM: 0px 1px 6px #d3d3d3;
+
+	/* DARK MODE */
+	--background-DM: #212124;
+	--main-text-mode-DM: white; 
+	--text-mode-2-DM: #dfddddcd;
+	--footer-text-mode-DM: #dfdddd9d; 
+	--footer-bg-DM: #1a1a1c; 
+	--input-bg-DM: #212124;
+	--button-bg-DM: #eaeaea1d;
+	--menu-bg-DM: #414040;
+	--button-border-DM: 1px solid #bebebe48;
+	--button-box-shadow-DM: 0px 1px 2px #2a29299f;
+	--input-shadow-DM: 0px 1px 6px #151515; 
+
+}
+
 * {
 	margin: 0;
 	padding: 0;
 	font-family: "Open Sans", sans-serif;
 	box-sizing: border-box;
-	color: #3a3939;
+	color: var(--main-text-mode-DM);
 }
 
 a {
@@ -21,6 +49,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	background-color: var(--background-DM);
 }
 
 nav {
@@ -38,7 +67,12 @@ nav div {
 }
 
 #right-nav {
+	
 	font-size: 13px;
+}
+
+#left-nav a {
+	color: var(--text-mode-2-DM);
 }
 
 #imagesLink {
@@ -48,7 +82,7 @@ nav div {
 .fa-bars {
 	padding-top: 2px;
 	font-size: 20px;
-	color: rgb(79, 79, 79);
+	color: var(--main-text-mode-DM);
 }
 
 #menuBars {
@@ -58,7 +92,7 @@ nav div {
 }
 
 #menuBars:hover {
-	background-color: #c6c6c6;
+	background-color: var(--menu-bg-DM);
 }
 
 nav img {
@@ -87,6 +121,7 @@ main section {
 
 main img {
 	width: 90%;
+	margin-bottom: 25px;
 }
 
 #inputSection {
@@ -99,6 +134,8 @@ main img {
 	width: 100%;
 	border-radius: 40px;
 	font-size: 16px;
+	background-color: var(--input-bg-DM);
+	transition: 200ms ease;
 }
 
 #xMark {
@@ -121,9 +158,10 @@ main img {
 
 #inputField:focus,
 #inputField:hover {
+	background-color: var(--button-bg-DM);
 	outline: none;
 	border: 1px solid #bebebe00;
-	box-shadow: 0px 1px 6px #d3d3d3;
+	box-shadow: var(--input-shadow-DM);
 }
 
 button {
@@ -133,12 +171,12 @@ button {
 	cursor: pointer;
 	border: 1px solid #bebebe00;
 	border-radius: 3px;
-	background-color: #eaeaea73;
+	background-color: var(--button-bg-DM);
 }
 
 button:hover {
-	border: 1px solid #bebebe;
-	box-shadow: 0px 1px 2px #d3d3d39f;
+	border: var(--button-border-DM);
+	box-shadow: var(--button-box-shadow-DM);
 }
 
 #left-nav,
@@ -148,12 +186,12 @@ footer {
 
 /* Footer */
 footer {
-	background-color: #eaeaeabf;
+	background-color: var(--footer-bg-DM);
 }
 
 footer a,
 footer p {
-	color: #868585;
+	color: var(--footer-text-mode-DM);
 }
 
 #darkModeSettings {
@@ -215,7 +253,6 @@ footer section {
 	gap: 5px !important;
 	font-size: 13px;
 }
-
 
 @media (max-width: 870px) {
 	#mainFooterSection {

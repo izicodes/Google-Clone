@@ -63,3 +63,42 @@ inputField.addEventListener("keypress", function (event) {
 		searchQuery();
 	}
 });
+
+// LIGHT MODE
+
+function lightMode() {
+	document.querySelector("body").style.backgroundColor = "var(--background-LM)";
+	document.querySelector("*").style.color = "var(--main-text-mode-LM)";
+	document.querySelector(".fa-bars").style.backgroundColor = "var(--main-text-mode-LM)";
+	document.querySelector("#inputField").style.backgroundColor = "var(--input-bg-LM)";
+
+	// Loops
+	var leftNavLinks = document.querySelectorAll("#left-nav a");
+	for (var i = 0; i < leftNavLinks.length; i++) {
+		leftNavLinks[i].style.color = "var(--text-mode-2-LM)";
+	}
+
+	// Functions
+	document.getElementById("menuBars").addEventListener("mouseout", function () {
+		menuBars.style.backgroundColor = ""; // Reset color when mouse leaves
+	});
+
+	var inputField = document.querySelector("#inputField");
+
+	inputField.addEventListener("focus", function () {
+		inputField.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue(
+			"--button-bg-DM"
+		);
+		inputField.style.outline = "none";
+		inputField.style.border = "1px solid #bebebe00";
+		inputField.style.boxShadow = getComputedStyle(document.documentElement).getPropertyValue(
+			"--input-shadow-DM"
+		);
+	});
+
+	inputField.addEventListener("blur", function () {
+		inputField.style.backgroundColor = "transparent";
+		inputField.style.border = "1px solid #bebebe";
+		inputField.style.boxShadow = "none";
+	});
+}
